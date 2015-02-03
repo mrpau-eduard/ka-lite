@@ -50,6 +50,7 @@ dateutil
 
 Under the MIT license:
 iso8601
+django-mptt
 
 Under the ISC license (http://opensource.org/licenses/isc-license):
 requests
