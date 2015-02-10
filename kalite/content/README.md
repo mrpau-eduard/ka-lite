@@ -1,7 +1,7 @@
 Content Curation
 ================
 
-Authors: Benjamin Bach, Calvin Mach
+Authors: Benjamin Bach, Calvin Chan
 
 Scope
 -----
