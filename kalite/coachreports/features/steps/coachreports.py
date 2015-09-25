@@ -159,7 +159,7 @@ def impl(context, exercise, learner, progress_text, progress_colour):
 @when(u"I click on the learner name")
 def impl(context):
     student_name = find_css_class_with_wait(context, "student-name")
-    click_and_wait_for_page_load(context, student_name.find_element_by_tag_name("a"))
+    click_and_wait_for_page_load(context, student_name)
 
 @then(u"I should be taken to that exercise within the Learn tab")
 def impl(context):
@@ -249,7 +249,8 @@ def impl(context):
 
 @when(u"I click on the partial colored cell")
 def impl(context):
-    click_and_wait_for_id_to_appear(context, find_css_with_wait(context, "td.partial"), "details-panel-view")
+    click_and_wait_for_id_to_appear(context, find_css_with_wait(context, "td.partial"), "details-panel-view",
+                                    wait_time=30)
 
 @then(u"I should see a Hide Tabular Report button")
 def impl(context):

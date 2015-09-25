@@ -3,7 +3,6 @@
 {% load i18n %}
 {% load i18n_filters %}
 {% load my_filters %}
-{% load compress %}
 
 {% get_current_language as lang_code %}
 <html lang="{{ lang_code }}">
@@ -50,6 +49,10 @@
 
         <script src="{% static 'js/distributed/bundles/bundle_common.js' %}"></script>
         <script src="{% static 'js/distributed/bundles/bundle_base.js' %}"></script>
+
+        {% if settings.INCLUDE_QTIP %}
+            <script src="{% static 'js/distributed/bundles/bundle_qtip.js' %}"></script>
+        {% endif %}
 
         <script>
         window.sessionModel.set({
