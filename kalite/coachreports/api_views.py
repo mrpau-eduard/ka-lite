@@ -63,6 +63,7 @@ def return_log_type_details(log_type, topic_ids=None):
 @require_admin
 def learner_logs(request):
 
+    lang = request.language
     page = request.GET.get("page", 1)
 
     limit = request.GET.get("limit", 50)
@@ -125,6 +126,7 @@ def learner_logs(request):
 @require_admin
 def aggregate_learner_logs(request):
 
+    lang = request.language
     learners = get_learners_from_GET(request)
 
     event_limit = request.GET.get("event_limit", 10)
@@ -152,7 +154,7 @@ def aggregate_learner_logs(request):
         "total_not_attempted": 0,
         "available_topics": [],
     }
-    
+
     end_date = datetime.datetime.strptime(end_date,'%Y/%m/%d') if end_date else datetime.datetime.now()
 
     start_date = datetime.datetime.strptime(start_date,'%Y/%m/%d') if start_date else end_date - datetime.timedelta(time_window)
